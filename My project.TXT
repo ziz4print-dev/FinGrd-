@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class FinGrd {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double TMA, MTA, InClassActivities, finalExam, score;
+
+        // TMA
+        do {
+            System.out.printf("Enter the TMA ?%n");
+            System.out.printf("By the way, it's between 0 and 30%n");
+            TMA = input.nextDouble();
+            if (TMA < 0 || TMA > 30)
+                System.out.printf("Invalid input! TMA must be between 0 and 30.%n");
+        } while (TMA < 0 || TMA > 30);
+
+        // MTA
+        do {
+            System.out.printf("Enter the MTA ?%n");
+            System.out.printf("By the way, it's between 0 and 10%n");
+            MTA = input.nextDouble();
+            if (MTA < 0 || MTA > 10)
+                System.out.printf("Invalid input! MTA must be between 0 and 15.%n");
+        } while (MTA < 0 || MTA > 15);
+
+        // Attendance
+        do {
+            System.out.printf("Enter yor In-Class Activities ?%n");
+            System.out.printf("By the way, it's between 0 and 10%n");
+            InClassActivities = input.nextDouble();
+            if (InClassActivities < 0 || InClassActivities > 10)
+                System.out.printf("Invalid input! Attendance must be between 0 and 5.%n");
+        } while (InClassActivities < 0 || InClassActivities > 10);
+
+        // Final Exam
+        do {
+            System.out.printf("Enter the finalExam?%n");
+            System.out.printf("By the way, it's between 0 and 50%n");
+            finalExam = input.nextDouble();
+            if (finalExam < 0 || finalExam > 50)
+                System.out.printf("Invalid input! Final Exam must be between 0 and 50.%n");
+        } while (finalExam < 0 || finalExam > 50);
+
+        // حساب المجموع
+        score = TMA + MTA + InClassActivities + finalExam;
+
+        // طباعة التقدير
+        if (score >= 90)
+            System.out.printf("Congratulations for success, your GPA is A");
+        else if (score >= 80)
+            System.out.printf("Congratulations for success, your GPA is B+");
+        else if (score >= 70)
+            System.out.printf("Congratulations for success, your GPA is B");
+        else if (score >= 60)
+            System.out.printf("Congratulations for success, your GPA is C");
+        else if (score >= 50)
+            System.out.printf("Congratulations for success, your GPA is D");
+        else
+            System.out.printf("Unfortunately! good luck next semester, your GPA is F");
+
+        // طباعة النتيجة النهائية
+        System.out.printf(" and your total score is: %.2f of 100, see you later%n", score);
+    }
+}
